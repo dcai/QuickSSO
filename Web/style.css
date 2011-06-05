@@ -1,0 +1,18 @@
+body{font-family:verdana;margin:0;padding:0;background:url(img/bg.jpg) repeat-x 0 0;font-size:11px}
+a{text-decoration: none;color:#0088DD}
+a:hover{text-decoration: underline;}
+input{font-family:verdana;}
+td{font-size:11px}
+th{font-size:12px;font-weight:bold;text-align:center;padding:5px;background:#ccc}
+#header{margin-top:80px;margin-bottom:8em;}
+#left p{text-align:right;}
+#right{padding-left: 2em;border-left:1px solid gray;}
+#username,#password{border:1px solid gray;font-weight:bold;background:#f4f4f4;}
+#footer{text-align:right;color:#ccc;border-top:1px solid #ccc;}
+.intro{color:#ccc;}
+.intro a{color:#ccc;text-decoration: underline;}
+.btn{background:#CFE8F5;border:1px solid #ccc;color:#1F1598;}
+.td_title{font-weight:bold;text-align:right}
+#nav{text-align:right}
+.cr_red{color:red;}
+.color{color:green;} 

@@ -1,0 +1,57 @@
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+    version="2.4">
+  <description>Unified-Sign-On System</description>
+  <filter>
+    <filter-name>sessionAuthorizationFilter</filter-name>
+    <filter-class>cn.edu.ujn.filter.SessionAuthorizationFilter</filter-class>
+    <init-param>
+      <param-name>ERROR_PAGE</param-name>
+      <param-value>http://127.0.0.1:8080/uso</param-value>
+    </init-param>
+    <init-param>
+      <param-name>session_name</param-name>
+      <param-value>usr_info</param-value>
+    </init-param>
+  </filter>
+  <filter>
+    <filter-name>ManagerAuthorizationFilter</filter-name>
+    <filter-class>cn.edu.ujn.filter.ManagerAuthorizationFilter</filter-class>
+    <init-param>
+      <param-name>ERROR_PAGE</param-name>
+      <param-value>http://127.0.0.1:8080/uso/manager.jsp</param-value>
+    </init-param>
+    <init-param>
+      <param-name>session_name</param-name>
+      <param-value>MgrAuth</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>ManagerAuthorizationFilter</filter-name>
+    <url-pattern>/manager/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>sessionAuthorizationFilter</filter-name>
+    <url-pattern>/admin/*</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <servlet-name>signin</servlet-name>
+    <servlet-class>cn.edu.ujn.Signin</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>MgrAuth</servlet-name>
+    <servlet-class>cn.edu.ujn.MgrAuth</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>signin</servlet-name>
+    <url-pattern>/signin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MgrAuth</servlet-name>
+    <url-pattern>/mgrauth.do</url-pattern>
+  </servlet-mapping>
+</web-app>
+
+ 
